@@ -1,4 +1,4 @@
-# lsg-course
+# LSG course 2016-11-22
 
 * [General Information](#general) <br>
 * [Hands-on](#hands-on) <br>
@@ -11,7 +11,7 @@ This lesson guides you through the basic usage of [Life Science Grid](http://doc
 ## <a name="hands-on"></a> Hands-on
 
   * [Part A](https://github.com/sara-nl/lsg-course/blob/master/partA.md)
-  * [Part B](partB)
+  * [Part B](https://github.com/sara-nl/lsg-course/blob/master/partB.md)
   * [Extras](Extras)
 
 ## <a name="presentation"></a> Presentation
