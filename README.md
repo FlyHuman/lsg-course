@@ -10,7 +10,7 @@ This lesson guides you through the basic usage of [Life Science Grid](http://doc
 
 ## <a name="hands-on"></a> Hands-on
 
-  * [Part A](partA)
+  * [Part A](https://github.com/sara-nl/lsg-course/blob/master/partA.md)
   * [Part B](partB)
   * [Extras](Extras)
 
