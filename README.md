@@ -12,7 +12,7 @@ This lesson guides you through the basic usage of [Life Science Grid](http://doc
 
   * [Part A](https://github.com/sara-nl/lsg-course/blob/master/partA.md)
   * [Part B](https://github.com/sara-nl/lsg-course/blob/master/partB.md)
-  * [Extras](Extras)
+  * [Extras](https://github.com/sara-nl/lsg-course/blob/master/extras.md)
 
 ## <a name="presentation"></a> Presentation
 
