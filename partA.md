@@ -8,7 +8,7 @@ Here are your first steps:
 2. [My first job](#my-first-job)
 3. [Get job status and output](#get-job-status-and-output)
 
-### 1. Access the User Interface
+### <a name="access-the-user-interface"></a> 1. Access the User Interface
 
 The UI (short for User Interface) is the login node that allows you to interact with the LSG. Let's log in.
 
@@ -44,7 +44,7 @@ ls -R lsg-course/
 TODO
 ```
 
-### 2. My first job 
+### <a name="my-first-job"></a> 2. My first job 
 
 #### Run the script on the UI
 
@@ -79,7 +79,7 @@ qsub -q stud_queue hello.sh
 
 This command returns a unique jobID (e.g., here it is 6401) that can be used to monitor the progress of the job, as shown in next section.
 
-### 3. Get job status and output
+### <a name="get-job-status-and-output"></a> 3. Get job status and output
 
 #### Monitor the progress 
 
