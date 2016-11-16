@@ -91,24 +91,30 @@ qsub -q stud_queue wrapper_mp.sh
 
 * Monitor the job progress and inspect the output file of the parallel run when available.
 
+> **_Food for brain:_**
+>
+> * Retrieve the output and observe the performance. Are the differences significant? 
+* Can you explain the differences between *real* and *user* time?
+
 ### <a name="multi-core-jobs-performance"></a> 3. Multi-core jobs performance
 
 #### PBS directive
 
-* You can specify the number of cores to be allocated for your job by including this line in your job script: `PBS -l nodes=1:ppn=2`. Here we asks two cores on a single node. Find this line in your `wrapper_serial.sh` and `wrapper_mp.sh` scripts.
+* You can specify the number of cores to be allocated for your job by including this line in your job script: `#PBS -l nodes=1:ppn=2` (e.g. here we ask two cores on a single node). Find this line in your `wrapper_serial.sh` and `wrapper_mp.sh` scripts.
  
 * For the following scenarios, submit the same jobs again and observe the performance :
   * Edit the `ppn` value both in `wrapper_serial.sh` and `wrapper_mp.sh` to ask for 2 cores: `#PBS -l nodes=1:ppn=2`. 
   * Edit the `ppn` value both in `wrapper_serial.sh` and `wrapper_mp.sh` to ask for 4 cores: `#PBS -l nodes=1:ppn=4`. 
 
-* Retrieve the output and observe the performance. Are the differences significant? Can you explain?
- 
-> **_Food for brain:_**
+> **_Hint:_**
 >
 > * You can see the status of all your submitted jobs in a new terminal window with the use
 of the command `watch qstat -u studXY`. Exit with `Ctrl+C`.
-* You can perform multiple runs of each job, so that fluctuations caused by e.g. network can be middled out. 
-* Can you think of other cases that you have to use multicore jobs? What happens if your program uses 
+
+> **_Food for brain:_**
+>
+> * Can you think of other cases that you have to use multicore jobs? What happens if your program uses 
 more memory than allocated to the cores that your job is reserving?
+* You can perform multiple runs of each job, so that fluctuations caused by e.g. network can be middled out. Play around with the parameters in the source files (e.g. *POINTS_ON_AXIS*). Any insight? Can you draw some curves (graphs) with the measurements you have gathered? How do they compare?
  
  
