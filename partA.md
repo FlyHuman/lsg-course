@@ -33,7 +33,8 @@ pwd
 ls -l
 ```
 
-* List the content of the working directory where the exercises are located:
+* On your home directory, you have a directory called `lsg-course`, within it another three called partA, 
+partB and exras. List the content of the working directory where the exercises are located:
 
 ```sh
 ls -R lsg-course/
@@ -41,7 +42,20 @@ ls -R lsg-course/
 
 > You should see the output: 
 ```sh
-TODO
+# lsg-course/:
+# extras  partA  partB
+# 
+# lsg-course/extras:
+# gridpi-mp-alt.c  Makefile  wrapper_serial.sh  gridpi-serial.c  wrapper_mp.sh
+# 
+# lsg-course/partA:
+# hello.sh
+# 
+# lsg-course/partB:
+# runfish  wrapper.sh
+# 
+# lsg-course/partB/runfish:
+# runFish.py
 ```
 
 ### <a name="my-first-job"></a> 2. My first job 
@@ -53,6 +67,7 @@ TODO
 ```sh
 cd ~/lsg-course/
 cd partA/
+ls
 ```
 
 * Let's run your first script!
@@ -77,23 +92,30 @@ nano hello.sh
 qsub -q stud_queue hello.sh
 ```
 
-This command returns a unique jobID (e.g., here it is 6401) that can be used to monitor the progress of the job, as shown in next section.
+* This command returns a unique jobID (e.g., here it is 6401). Find your own:
+
+```sh
+# 6401.gb-ce-kun.els.sara.nl
+```
+
+This is the identification of the job that can be used to monitor the progress of the job, as shown in next section.
 
 ### <a name="get-job-status-and-output"></a> 3. Get job status and output
 
 #### Monitor the progress 
 
-* Monitor the progress of your job using ths jobID
+* Monitor the progress of your job using this jobID
 
 ```sh 
 qstat 6401   # replace 6401 with your jobID
 ```
 
-> You should see something like this:
-```
-  Job ID                    Name             User            Time Use S Queue
-  ------------------------- ---------------- --------------- -------- - -----
-  6401.gb-ce-kun            hello.sh         stud23          00:00:00 R stud_queue 
+You should see something like this:
+
+```sh
+# Job ID                    Name             User            Time Use S Queue
+# ------------------------- ---------------- --------------- -------- - -----
+# 6401.gb-ce-kun            hello.sh         stud23          00:00:00 R stud_queue 
 ```  
 
 * Get more details about the job:
@@ -108,9 +130,8 @@ qstat -f 6401
 
 ```sh
 qstat 6401
+# qstat: Unknown Job Id Error 6401.gb-ui-kun.els.sara.nl
 ```  
-
->qstat: Unknown Job Id Error 6401.gb-ui-kun.els.sara.nl
 
 * This suggests that the job is done. What is your output?
 
@@ -118,14 +139,22 @@ qstat 6401
   ls
 ```
 
-> You should see two new files in your directory:
+You should see two new files in your directory:
+
 ```sh
-hello.sh
-hello.sh.e6401
-hello.sh.o6401
+# hello.sh
+# hello.sh.e6401
+# hello.sh.o6401
 ```
 
-What is in the `hello.sh.e6401` and `hello.sh.o6401` files?
+#### What happened?
 
+Congratulations! You have just run your first job on the LSG cluster!
+
+> **_Food for brain:_**
+>
+> * What information is in the `hello.sh.e6401` and `hello.sh.o6401` files?
+* How can you tell that your job run on the cluster and not on the UI?
+* Make a small change in the script and run the job again. Inspect the output files.
 
 
