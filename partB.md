@@ -13,6 +13,10 @@ Here are your next steps:
 
 #### <a name="run-the-fish-application"></a> 1. Run the Fish application
 
+We have adapted [some code](https://github.com/spark-mooc/mooc-setup/blob/master/ML_lab5_pca_student.ipynb) from an example where they are working with [larval zebrafish](http://research.janelia.org/zebrafish/), so that you can run it on the LSG cluster. 
+
+It outputs a picture showing the PCA analysis of the 2 principal components that you choose, for a given fish's neural system's activity in time, in response to certain stimulii. 
+
 * Browse to the working directory. We will run the Fish exercise in partB:
 
 ```sh
@@ -37,10 +41,10 @@ qstat 6402   # replace 6402 with your jobID
 
 > **_Food for brain:_**
 >
-> * Run the following command: `qstat`
+> * Uhm... did it really take that little to finish? Run the following command: `qstat`
 * What do you see? What does it mean?
   
-* The output of the job is placed in the directory where the submit command was issued. Once the job is ready, you should have new output (in this case a `.png` fish image). Check:
+* The output of jobs is placed in the directory where the submit command was issued. And we get the (already familiar) .e... and .o... files as well. In our fishes example, we expect the program to produce a `.png` file containing a fish image. Is it there? Check:
 
 ```sh
 ls
@@ -51,16 +55,17 @@ ls
 # wrapper.sh.o6402  
 ```
 
-* Open the `wrapper.sh.e**` and `wrapper.sh.o**` files. Do you understand what went wrong?  
+* So... unfortunately, we cannot see the `.png` file. We can see the .e... and .o... files though. Open the `wrapper.sh.e**` and `wrapper.sh.o**` files. Do you understand what went wrong?  
 
 > **_Food for brain:_**
 >
-> * The path to the software was not given correctly, so the job failed to run the example properly 
-and generate the output. Open the `wrapper.sh` script. Can you find where the path to the software are specified?
-* Do you see where the software is installed? Is it local on your cluster or elsewhere? Where is the input dataset?
+> * Which of the .e... and .o... files tells you that something went wrong? 
+* Which of the .e... and .o... files tells you what went wrong? 
+* The file you answer in the previou question is actually showing you a Python error telling you that the program failed to run properly because it could not import a module called pyspark.sql. Pyspark is a Python module that is not just simply available by default for everybody in the cluster. Therefore, if you want to use it, you have to let your running environment know where it can find that module. In particular, to illustrate a job failure, we have (deliberately) written a wrong path to this module on the wrapper.sh file. Mistyping a path is a common problem that could easily happen to you, though, when you are defining your jobs. Open the `wrapper.sh` script. Can you find where the path to this _extra_ software is specified?
+* Based on your previous answer, can you actually see where the software is installed? Then, what do you think: is it installed locally on the cluster or is it somewhere else? 
+* Oh, and can you answer the previous two questions now for the input dataset?
  
-* In the `wrapper.sh` the variable name SPARK_HOME should point to the absolute path of the software but the 
-slash `/` is missing. Correct this, save the script and submit the job again. 
+* In the `wrapper.sh`, the environment variable SPARK_HOME should point to the **absolute path** of the Pyspark module, but the initial slash (`/`) is missing. Correct this, save the script and submit the job again. 
 
 * Check the status of the job with the new jobID
  
@@ -71,14 +76,14 @@ display PC1-2.png  # replace with your own PC1-*.png file
 ```
 
 * In case this does not work or if you want to copy the output image to your laptop, do the following: 
-  * Start a new terminal window. Do not log in to the cluster.  
-  * Your working directory is in your laptop. Type:
+  * Start a new terminal window in your laptop (but do **not** log in to the cluster in it).  
+  * Type:
 
   ```sh
   scp studXY@gb-ui-kun.els.sara.nl:/home/studXY/lsg-course/partB/*.png .  # replace `studXY` with your username
   ```
   
-  * You can now display the fish picture using your laptop's image viewer.
+  * You can now display the fish picture using any image viewer in your laptop (any web browser will also do fine).
 
 ### <a name="submit-multiple-jobs"></a> 2. Submit multiple jobs
 
@@ -127,7 +132,7 @@ qdel 6401
 
 #### PBS environment variables
 
-In a job, PBS defines a number of directives to help the cluster scheduler find the best suited resources. 
+In a job, PBS defines a number of directives to help the cluster scheduler find the best-suited resources. 
 You can set the `PBS directives` at the beginning of your job script (starting with `#PBS`).
 
 * **Walltime:** For how long will the sysem wait to run your job? Specify the maximum job walltime 
@@ -146,7 +151,7 @@ job:
 
 #### Queues explained
 
-* On the LSG clusters you can find different queue types: 
+* On the LSG clusters you can find different queues: 
 
 ```sh
 # =============== ===========================
@@ -166,5 +171,5 @@ qsub -q long wrapper.sh # allow job to run for 72 hours
    
 > **_Food for brain:_**
 >
-> * Can you think of (and sketch) the steps that you would need to follow to create your own job script?
+> * Think of a program you are currently running for your research, and imagine that all software is already installed and accessible to you somewhere in the cluster. Can you sketch the steps that you would need to follow to create your own job script?
 * Play around, submit few jobs and try to adapt your own programs. 
