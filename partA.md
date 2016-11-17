@@ -10,7 +10,9 @@ Here are your first steps:
 
 ### <a name="access-the-user-interface"></a> 1. Access the User Interface
 
-We keep saying that LSG is a cluster. The cluster is composed of several computers that we call nodes. The UI (short for User Interface) is the node from the LSG cluster where you can log in to from the outside world. The login node allows you to interact with the LSG. Let's log in.
+We keep saying that LSG is a cluster. The cluster is composed of several computers that we call nodes. Different nodes usually have different purposes. The UI (short for User Interface) is the node from the LSG cluster where you can log in to from the outside world. The UI is *not* meant to run the bulk of your processing, but rather, it is a great place to start testing whether your program actually is suitable to run in the cluster, to sketch your solutions or, otherwise, to get acquainted with the system overall.
+
+The login node allows you to interact with the LSG cluster, so let's log in.
 
 #### Log in to the UI
 
@@ -33,7 +35,7 @@ pwd
 ls -l
 ```
 
-* On your home directory, you have a directory called `lsg-course`, within it another three called partA, 
+* In your home directory, you have a directory called `lsg-course`, within it another three called partA, 
 partB and exras. List the content of the working directory where the exercises are located:
 
 ```sh
@@ -86,7 +88,7 @@ nano hello.sh
 
 #### Run the script on the cluster
 
-* So shall we run the same example on the cluster?
+* So, shall we run the same example on the cluster?
 
 ```sh
 qsub -q stud_queue hello.sh
@@ -99,6 +101,10 @@ qsub -q stud_queue hello.sh
 ```
 
 This is the identification of the job that can be used to monitor the progress of the job, as shown in next section.
+
+> **_Food for brain:_**
+>
+> * Uh!? What's with all that fuss!? I thought I could run my program already by executing it normally... What do I need to put now `qsub -q stud_queue` in front of it for?
 
 ### <a name="get-job-status-and-output"></a> 3. Get job status and output
 
@@ -118,15 +124,25 @@ You should see something like this:
 # 6401.gb-ce-kun            hello.sh         stud23          00:00:00 R stud_queue 
 ```  
 
+> **_Food for brain:_**
+>
+> * You can run the previous command (qstat) several times. Do you see the value for the _S_ column change? What does the _S_ column tell you? What do the different values under _S_ mean?
+
 * Get more details about the job:
 
 ```sh 
 qstat -f 6401 
 ```
 
+> **_Food for brain:_**
+>
+> * Which node is your script running on?
+* How long can your job be running for?
+
+
 #### Retrieve the output
 
-* Once the job is ready the status will be:
+* Once the job is ready the status, qstat will reply with:
 
 ```sh
 qstat 6401
@@ -154,7 +170,7 @@ Congratulations! You have just run your first job on the LSG cluster!
 > **_Food for brain:_**
 >
 > * What information is in the `hello.sh.e6401` and `hello.sh.o6401` files?
-* How can you tell that your job run on the cluster and not on the UI?
+* How can you tell that your job ran on the cluster and not on the UI?
 * Make a small change in the script and run the job again. Inspect the output files.
 
 
