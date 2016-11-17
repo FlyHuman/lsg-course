@@ -10,9 +10,9 @@ Here are your first steps:
 
 ### <a name="access-the-user-interface"></a> 1. Access the User Interface
 
-We keep saying that LSG is a cluster. The cluster is composed of several computers that we call nodes. Different nodes usually have different purposes. The UI (short for User Interface) is the node from the LSG cluster where you can log in to from the outside world. The UI is *not* meant to run the bulk of your processing, but rather, it is a great place to start testing whether your program actually is suitable to run in the cluster, to sketch your solutions or, otherwise, to get acquainted with the system overall.
+The grid is a collection of geographically distributed interconnected clusters, where a cluster is a collection of computers coupled to work together. To interact with a single cluster or the entire grid, you log in to the UI (short for User Interface). The UI is *not* meant to run the bulk of your processing, but rather, it is a great place to start testing whether your program actually is suitable to run in the cluster, to sketch your solutions or, otherwise, to get acquainted with the system overall.
 
-The login node allows you to interact with the LSG cluster, so let's log in.
+The UI allows you to interact with the Life Science Grid (LSG) cluster, so let's log in.
 
 #### Log in to the UI
 
