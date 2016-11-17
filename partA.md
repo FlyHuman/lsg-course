@@ -10,7 +10,7 @@ Here are your first steps:
 
 ### <a name="access-the-user-interface"></a> 1. Access the User Interface
 
-The UI (short for User Interface) is the login node that allows you to interact with the LSG. Let's log in.
+A cluster is composed of several computers that we call nodes. The UI (short for User Interface) is the node where you can log in to from the outside world. The login node allows you to interact with the LSG. Let's log in.
 
 #### Log in to the UI
 
