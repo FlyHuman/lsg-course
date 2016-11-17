@@ -77,10 +77,10 @@ display PC1-2.png  # replace with your own PC1-*.png file
 
 * In case this does not work or if you want to copy the output image to your laptop, do the following: 
   * Start a new terminal window in your laptop (but do **not** log in to the cluster in it).  
-  * Type:
+  * Type the following command to download the picture to your Desktop:
 
   ```sh
-  scp studXY@gb-ui-kun.els.sara.nl:/home/studXY/lsg-course/partB/*.png .  # replace `studXY` with your username
+  scp studXY@gb-ui-kun.els.sara.nl:/home/studXY/lsg-course/partB/*.png ~/Desktop/  # replace `studXY` with your username
   ```
   
   * You can now display the fish picture using any image viewer in your laptop (any web browser will also do fine).
