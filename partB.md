@@ -179,3 +179,8 @@ qsub -q long wrapper.sh # allow job to run for 72 hours
 >
 > * Think of a program you are currently running for your research, and imagine that all software is already installed and accessible to you somewhere in the cluster. Can you sketch the steps that you would need to follow to create your own job script?
 * Play around, submit few jobs and try to adapt your own programs. 
+
+
+### Next: Extras
+
+Now that you have completed the Part B of [LSG course](https://github.com/sara-nl/lsg-course/blob/master/README.md), you are ready to move on and continue with [Extras](https://github.com/sara-nl/lsg-course/blob/master/extras.md).
