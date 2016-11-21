@@ -16,4 +16,4 @@ This lesson guides you through the basic usage of [Life Science Grid](http://doc
 
 ## <a name="presentation"></a> Presentation
 
-* Introduction to the Life Science Grid
+* [Introduction to the Life Science Grid](presentation/intro-lsg.pdf)
