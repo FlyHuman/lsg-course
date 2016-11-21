@@ -17,6 +17,13 @@ The UI allows you to interact with the Life Science Grid (LSG) cluster, so let's
 #### Log in to the UI
 
 * Open a terminal in your laptop
+  * To prepare your environment support graphical windows type (press enter to submit each command):
+  
+  ```sh
+  echo "export DISPLAY=localhost:0.0" >> $HOME/.bashrc
+  source $HOME/.bashrc
+  ```
+  
 * Login to the "kun" cluster UI located in Nijmegen:
   * Your username is **studXY**, replace `XY` with the number assigned to you.
   * You will receive the password from the workshop facilitators.
