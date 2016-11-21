@@ -77,12 +77,18 @@ display PC1-2.png  # replace with your own PC1-*.png file
 
 * In case this does not work or if you want to copy the output image to your laptop, do the following: 
   * Start a new terminal window in your laptop (but do **not** log in to the cluster in it).  
-  * Type:
+  * Type the following command to download the picture to your laptop:
 
   ```sh
-  scp studXY@gb-ui-kun.els.sara.nl:/home/studXY/lsg-course/partB/*.png .  # replace `studXY` with your username
+  scp "studXY@gb-ui-kun.els.sara.nl:/home/studXY/lsg-course/partB/*.png" .  # replace `studXY` with your username
   ```
-  
+   
+    * Windows users should run the following command to get the image on their Desktops:
+    
+    ```sh
+    cp *.png /c/Users/maithili/Desktop/ # replace `maithili` with your the username you have in your laptop
+    ```
+    
   * You can now display the fish picture using any image viewer in your laptop (any web browser will also do fine).
 
 ### <a name="submit-multiple-jobs"></a> 2. Submit multiple jobs
@@ -173,3 +179,8 @@ qsub -q long wrapper.sh # allow job to run for 72 hours
 >
 > * Think of a program you are currently running for your research, and imagine that all software is already installed and accessible to you somewhere in the cluster. Can you sketch the steps that you would need to follow to create your own job script?
 * Play around, submit few jobs and try to adapt your own programs. 
+
+
+### Next: Extras
+
+Now that you have completed the Part B of [LSG course](https://github.com/sara-nl/lsg-course/blob/master/README.md), you are ready to move on and continue with [Extras](https://github.com/sara-nl/lsg-course/blob/master/extras.md).

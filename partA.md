@@ -173,4 +173,7 @@ Congratulations! You have just run your first job on the LSG cluster!
 * How can you tell that your job ran on the cluster and not on the UI?
 * Make a small change in the script and run the job again. Inspect the output files.
 
+### Next: part B
+
+Now that you have completed the Part A of [LSG course](https://github.com/sara-nl/lsg-course/blob/master/README.md), you are ready to move on and continue with [Part B](https://github.com/sara-nl/lsg-course/blob/master/partB.md).
 
