@@ -17,7 +17,7 @@ The UI allows you to interact with the Life Science Grid (LSG) cluster, so let's
 #### Log in to the UI
 
 * Open a terminal in your laptop
-  * To prepare your environment support graphical windows type (press enter to submit each command):
+  * Windows users only: type the following commands to prepare your environment support graphical windows (press enter to submit each command):
   
   ```sh
   echo "export DISPLAY=localhost:0.0" >> $HOME/.bashrc
