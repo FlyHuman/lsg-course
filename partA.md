@@ -17,12 +17,14 @@ The UI allows you to interact with the Life Science Grid (LSG) cluster, so let's
 #### Log in to the UI
 
 * Open a terminal in your laptop
-  * Windows users only: type the following commands to prepare your environment support graphical windows (press enter to submit each command):
+  * Windows users only: 
+    * Make sure that Xming program is running. If not, start it first.
+    * Type the following commands to prepare your environment support graphical windows (press enter to submit each command):
   
-  ```sh
-  echo "export DISPLAY=localhost:0.0" >> $HOME/.bashrc
-  source $HOME/.bashrc
-  ```
+    ```sh
+    echo "export DISPLAY=localhost:0.0" >> $HOME/.bashrc
+    source $HOME/.bashrc
+    ```
   
 * Login to the "kun" cluster UI located in Nijmegen:
   * Your username is **studXY**, replace `XY` with the number assigned to you.
